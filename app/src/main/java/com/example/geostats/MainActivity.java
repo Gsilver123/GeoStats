@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    protected int _splashTime = 3000;
 
     private EditText mSearchBar;
     private Button mSendButton;
