@@ -37,4 +37,5 @@ dependencies {
     implementation 'org.koin:koin-java:2.0.1'
     implementation("com.squareup.moshi:moshi:1.9.1")
     implementation("com.squareup.okhttp3:logging-interceptor:4.2.1")
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.3'
 }

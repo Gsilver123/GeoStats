@@ -44,6 +44,23 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <Button
+        android:id="@+id/see_geo_info_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Geo Info"
+        android:textSize="16sp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/search_bar_bottom_horizontal_guideline"
         android:layout_width="wrap_content"
