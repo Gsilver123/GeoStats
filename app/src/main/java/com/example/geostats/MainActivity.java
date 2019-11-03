@@ -32,8 +32,10 @@ public class MainActivity extends AppCompatActivity {
 
                     // REMOVE
                     FragmentManager fragmentManager = getSupportFragmentManager();
-                    Fragment info = new GeoInfo();
-                    fragmentManager.beginTransaction().replace(R.id.geoInfoFragment, info).commit();
+                    Fragment infoFragment = new GeoInfoFragment();
+                    infoFragment.setArguments(getIntent().getExtras());
+                    fragmentManager.beginTransaction()
+                            .replace(R.id.geoInfoFragment, infoFragment).commit();
                     //
                 }
                 else {

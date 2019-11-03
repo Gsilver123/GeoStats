@@ -22,7 +22,7 @@ import android.widget.TextView;
  * Use the {@link GeoInfo#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class GeoInfo extends Fragment {
+public class GeoInfoFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -34,7 +34,7 @@ public class GeoInfo extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public GeoInfo() {
+    public GeoInfoFragment() {
         // Required empty public constructor
     }
 
@@ -47,8 +47,8 @@ public class GeoInfo extends Fragment {
      * @return A new instance of fragment GeoInfo.
      */
     // TODO: Rename and change types and number of parameters
-    public static GeoInfo newInstance() {
-        GeoInfo fragment = new GeoInfo();
+    public static GeoInfoFragment newInstance() {
+        GeoInfoFragment fragment = new GeoInfoFragment();
         Bundle args = new Bundle();
         //args.putString(ARG_PARAM1, param1);
         //args.putString(ARG_PARAM2, param2);
