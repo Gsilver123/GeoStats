@@ -22,6 +22,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/search_bar_bottom_horizontal_guideline">
 
+        <FrameLayout
+            android:id="@+id/geoInfoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"></FrameLayout>
+
         <EditText
             android:id="@+id/search_bar_edit_text"
             android:layout_width="0dp"

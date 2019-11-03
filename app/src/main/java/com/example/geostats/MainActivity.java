@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mSendButton;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -31,11 +31,11 @@ public class MainActivity extends AppCompatActivity {
                     coordinates.setLocation(mSearchBar.getText().toString());
 
                     // REMOVE
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    Fragment infoFragment = new GeoInfoFragment();
-                    infoFragment.setArguments(getIntent().getExtras());
-                    fragmentManager.beginTransaction()
-                            .replace(R.id.geoInfoFragment, infoFragment).commit();
+                    //if (findViewById(R.id.geoInfoFragment) != null) {
+                        Fragment infoFragment = new GeoInfoFragment();
+                        infoFragment.setArguments(getIntent().getExtras());
+                        getSupportFragmentManager().beginTransaction().add(R.id.geoInfoContainer, infoFragment).commit();
+                    //}
                     //
                 }
                 else {
