@@ -1,14 +1,15 @@
 package com.example.geostats;
 
-class Coordinates {
+import com.squareup.moshi.Json;
 
-    private double mLatitude = 0;
-    private double mLongitude = 0;
-    private String mLocation = "";
+class Coordinates {
+    Double mLatitude = 0.0;
+    Double mLongitude = 0.0;
+
 
     Coordinates() { }
 
-    void setLatitude(double latitude) {
+    void setLatitude(Double latitude) {
         mLatitude = latitude;
     }
 
@@ -16,19 +17,11 @@ class Coordinates {
         return mLatitude;
     }
 
-    void setLongitude(double longitude) {
+    void setLongitude(Double longitude) {
         mLongitude = longitude;
     }
 
     double getLongitude() {
         return mLongitude;
-    }
-
-    void setLocation(String location) {
-        mLocation = location;
-    }
-
-    String getLocation() {
-        return mLocation;
     }
 }

@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">GeoStats</string>
 
+    <string name="api_key">AIzaSyDYPadJ_CDays2j-7qZO_vULFnONAeDfFo</string>
+
     <string name="search_bar_hint">Search Location</string>
     <string name="search_bar_compare_to_hint">Compare To</string>
 </resources>
