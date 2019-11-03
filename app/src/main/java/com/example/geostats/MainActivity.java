@@ -2,19 +2,27 @@ package com.example.geostats;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    protected int _splashTime = 3000;
 
     private EditText mSearchBar;
     private Button mSendButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        try{
+            Thread.sleep(3000);
+        }
+        catch (InterruptedException ex){
+            Log.d("thread", ex.getLocalizedMessage());
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
