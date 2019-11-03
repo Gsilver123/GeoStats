@@ -1,6 +1,7 @@
 package com.example.geostats;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 
@@ -20,10 +21,11 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private EditText mSearchBar;
     private Button mSendButton;
+    private Button mGeoInfoButton;
 
     private GeoViewModel mGeoViewModel;
 
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mGeoViewModel = new GeoViewModel();
+        mGeoViewModel = GeoViewModel.getInstance();
 
         setLocationObserver();
 
@@ -62,6 +64,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                             "Please input a location",
                             Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        mGeoInfoButton = findViewById(R.id.see_geo_info_btn);
+        mGeoInfoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startFragment(new GeoInfoFragment());
+                mGeoViewModel.getGeoInfo(getString(R.string.esri_api_key));
+                mGeoInfoButton.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -96,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                             .build();
 
                     mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                    mGeoInfoButton.setVisibility(View.VISIBLE);
                 }
             }
         };
@@ -109,13 +121,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMarker = googleMap.addMarker(new MarkerOptions()
                 .position(new LatLng(0, 0))
                 .visible(false));
+        mMarker.setSnippet("Helllo");
     }
 
-    @Override
-    public boolean onMarkerClick(Marker marker) {
-        if (marker.equals(mMarker)) {
-            Toast.makeText(this, "Yeahhh", Toast.LENGTH_SHORT).show();
-        }
-        return false;
+    private void startFragment(Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }

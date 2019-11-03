@@ -2,7 +2,9 @@
     <string name="app_name">GeoStats</string>
 
     <string name="api_key">AIzaSyDYPadJ_CDays2j-7qZO_vULFnONAeDfFo</string>
+    <string name="esri_api_key">Df1f89SXgD42nHFcS22KG8-gT1Lcrci5NijeWSmkTJgdWPR9iVFREZ8EsYzPVKMcYtOdTSRqO7fJ74dFuAv3Akh-dW5XTwAASobLa0BE6u4zDedV0fHBehNwC83k2rs-</string>
 
     <string name="search_bar_hint">Search Location</string>
     <string name="search_bar_compare_to_hint">Compare To</string>
+    <string name="geo_info_fragment_title">Data that has been found just for you</string>
 </resources>
