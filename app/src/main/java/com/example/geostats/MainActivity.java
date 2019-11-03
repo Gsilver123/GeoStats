@@ -1,10 +1,14 @@
 package com.example.geostats;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +29,12 @@ public class MainActivity extends AppCompatActivity {
                 if (!mSearchBar.getText().toString().isEmpty()) {
                     Coordinates coordinates = new Coordinates();
                     coordinates.setLocation(mSearchBar.getText().toString());
+
+                    // REMOVE
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    Fragment info = new GeoInfo();
+                    fragmentManager.beginTransaction().replace(R.id.geoInfoFragment, info).commit();
+                    //
                 }
                 else {
                     Toast.makeText(
@@ -34,5 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+
     }
 }
