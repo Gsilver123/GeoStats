@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">GeoStats</string>
 
-    <string name="api_key">AIzaSyDYPadJ_CDays2j-7qZO_vULFnONAeDfFo</string>
+    <string name="api_key"></string>
 
-    <string name="esri_api_key">vPSYDBEQTfzCuIuIXRS15M2frerjW3vmJ4xOpECTtaWkni3hzTjojOM296ijryJ3t-POJiELEr_x-kbt2Rv04mj1F5yc9X9XMgQzcwOqjWIlM2-omNhq3wzSgfOeU5B8HtMEN8llhcO0cRjiKnhnqA..</string>
+    <string name="esri_api_key"></string>
 
     <string name="search_bar_hint">Search Location</string>
     <string name="search_bar_compare_to_hint">Compare To</string>
